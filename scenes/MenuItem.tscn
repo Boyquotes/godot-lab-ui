@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/retro_gaming_menu_option.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/MenuItem.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "out"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "over"
+length = 0.8
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.784314, 0.784314, 0.784314, 1 ), Color( 0.588235, 0.588235, 0.588235, 1 ), Color( 0.784314, 0.784314, 0.784314, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="MenuItem" type="Label"]
+anchor_left = 0.00115638
+anchor_top = 0.0020557
+anchor_right = 1.00116
+anchor_bottom = 0.0020557
+margin_left = 23.0
+margin_top = 47.0
+margin_right = -257.0
+margin_bottom = 61.0
+rect_pivot_offset = Vector2( 1.90735e-06, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+text = "MenuItem"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/out = SubResource( 1 )
+anims/over = SubResource( 2 )

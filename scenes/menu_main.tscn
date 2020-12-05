@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/MenuItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/retro_gaming_title.tres" type="DynamicFont" id=4]
+
+[node name="menu_main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.629959
+margin_top = 0.629974
+margin_right = 0.630005
+margin_bottom = 0.630005
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 87.37
+margin_top = 7.37003
+margin_right = 236.37
+margin_bottom = 28.37
+rect_pivot_offset = Vector2( 55.5, 7 )
+custom_fonts/font = ExtResource( 4 )
+text = "ABSOLUTE GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" parent="." instance=ExtResource( 2 )]
+margin_right = -190.001
+text = "Start - Level 0"
+destination = "res://scenes/level_0.tscn"
+
+[node name="Leave" parent="." instance=ExtResource( 2 )]
+margin_top = 71.0
+margin_right = -190.001
+margin_bottom = 85.0
+text = "Leave"
+destination = "quit"
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 255.37, 23.37 )
+rotation = 0.177763
+scale = Vector2( 0.346113, 0.346113 )
+texture = ExtResource( 1 )
